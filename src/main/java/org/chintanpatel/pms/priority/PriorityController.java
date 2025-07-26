@@ -34,7 +34,7 @@ public class PriorityController {
     @PostMapping("/priorities/insertOrUpdatePriority")
     public String insertOrUpdatePriority(@Valid @ModelAttribute("priority") Priority priority, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "priorities/priority-form";
+            return "priority/priority-form";
         }
         priorityService.addPriority(priority);
         return "redirect:/priorities";
