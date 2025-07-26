@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css">
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
+</head>
+<body class="p-3 m-3 border-0">
+    <div class="container mt-2">
+        <div class="row">
+            <div class="fs-1">
+                <h1 class="display-4">Project Management System.</h1>
+                <p class="lead">A Spring Boot application for managing projects, priorities, status, and tasks</p>
+                <hr class="my-4">
+                <p class="lead">Use the menu to manage priorities, status, projects, tasks</p>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Priority</h5>
+                        <p class="card-text">
+                            Efficiently manage all priorities within your organization.
+                            Create a new priority, update existing details, view a
+                            complete list, and delete priorities when no longer
+                            needed.
+                        </p>
+                        <p class="card-text">
+                            Each priority can have multiple projects assigned to it.
+                            Keep track of priority scope and progress by organizing
+                            and monitoring associated projects.
+                        </p>
+                        <p class="card-text">
+                            Ensure your project structure stays organized and up
+                            to date with this simple and intuitive CRUD interface.
+                        </p>
+                        <a th:href="@{/priorities}" class="btn btn-success">View Priority</a>
+                        <a th:href="@{/priorities/showPriority}" class="btn btn-success">Add Priority</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Status</h5>
+                        <p class="card-text">
+                            Efficiently manage all statuses within your organization.
+                            Create a new status, update existing details, view a
+                            complete list, and delete statuses when no longer
+                            needed.
+                        </p>
+                        <p class="card-text">
+                            Each status can have multiple tasks assigned to it.
+                            Keep track of status scope and progress by organizing
+                            and monitoring associated tasks.
+                        </p>
+                        <p class="card-text">
+                            Ensure your project structure stays organized and up
+                            to date with this simple and intuitive CRUD interface.
+                        </p>
+                        <a th:href="@{/statuses}" class="btn btn-success">View Status</a>
+                        <a th:href="@{/statuses/showStatus}" class="btn btn-success">Add Status</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Projects</h5>
+                        <p class="card-text">
+                            Efficiently manage all projects within your organization.
+                            Create a new project, update existing details, view a
+                            complete list, and delete projects when no longer
+                            needed.
+                        </p>
+                        <p class="card-text">
+                            Each project can have multiple tasks assigned to it.
+                            Keep track of the project scope and progress
+                            by organizing and monitoring associated tasks.
+                        </p>
+                        <p class="card-text">
+                            Ensure your project structure stays organized and up
+                            to date with this simple and intuitive CRUD interface.
+                        </p>
+                        <a th:href="@{/projects}" class="btn btn-success">View Projects</a>
+                        <a th:href="@{/projects/showProject}" class="btn btn-success">Add Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Tasks</h5>
+                        <p class="card-text">
+                            Efficiently manage all tasks within your
+                            organization. Create a new task, update
+                            existing details, view a complete list,
+                            and delete tasks when no longer needed.
+                        </p>
+                        <p class="card-text">
+                            Each task can have multiple comments
+                            associated with it. Keep track of the
+                            task scope and progress by organizing
+                            and monitoring associated comments.
+                        </p>
+                        <p class="card-text">
+                            Ensure your project structure stays
+                            organized and up to date with this
+                            simple and intuitive CRUD interface.
+                        </p>
+
+                        <a th:href="@{/tasks}" class="btn btn-success">View Tasks</a>
+                        <a th:href="@{/tasks/showTask}" class="btn btn-success">Add Task</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
