@@ -48,6 +48,7 @@
                                     <th>StartDate</th>
                                     <th>EndDate</th>
                                     <th>Priority</th>
+                                    <th>Task</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,6 +59,7 @@
                                     <td th:text="${project.startDate}"></td>
                                     <td th:text="${project.endDate}"></td>
                                     <td th:text="${project.priority.priorityType}"></td>
+                                    <td th:text="${project.tasks.size()}"></td>
                                     <td>
                                         <a th:href="@{/projects/manageProject/{projectId}(projectId=${project.projectId})}" class="link-success">Edit</a>
                                         &nbsp;|&nbsp;
