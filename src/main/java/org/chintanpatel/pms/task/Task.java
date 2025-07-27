@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import org.chintanpatel.pms.project.Project;
 import org.chintanpatel.pms.status.Status;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -25,10 +26,12 @@ public class Task {
     @Column(name = "description", nullable = false)
     private String description;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull(message = "Please Provide Task Start Date")
     @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull(message = "Please Provide Task End Date")
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
