@@ -4,9 +4,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import org.chintanpatel.pms.priority.Priority;
+import org.chintanpatel.pms.task.Task;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "project")
@@ -40,16 +43,20 @@ public class Project {
     @JoinColumn(name = "priority_id", nullable = false)
     private Priority priority;
 
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Task> tasks = new HashSet<>();
+
     public Project() {
     }
 
-    public Project(Long projectId, String projectName, String description, LocalDate startDate, LocalDate endDate, Priority priority) {
+    public Project(Long projectId, String projectName, String description, LocalDate startDate, LocalDate endDate, Priority priority, Set<Task> tasks) {
         this.projectId = projectId;
         this.projectName = projectName;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
         this.priority = priority;
+        this.tasks = tasks;
     }
 
     public Long getProjectId() {
@@ -98,5 +105,13 @@ public class Project {
 
     public void setPriority(Priority priority) {
         this.priority = priority;
+    }
+
+    public Set<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<Task> tasks) {
+        this.tasks = tasks;
     }
 }

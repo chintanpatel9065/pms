@@ -20,6 +20,8 @@ public class Status {
     @NotEmpty(message = "Please Provide Status Type")
     @Column(name = "status_type", nullable = false)
     private String statusType;
+
+    @OneToMany(mappedBy = "status", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Task> tasks = new HashSet<>();
 
     public Status() {
