@@ -14,7 +14,7 @@ public interface TaskService {
 
     List<Task>searchByTaskName(String taskName);
 
-    List<Task>searchByPriorityType(String priorityType);
+    List<Task>searchByStatusType(String StatusType);
 
     List<Task>searchByProjectName(String projectName);
 
